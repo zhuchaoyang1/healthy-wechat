@@ -1,0 +1,16 @@
+{
+  "id": "1706097",
+  "name": "毕设-小程序",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "36554",
+      "name": "飞机",
+      "font_class": "feiji",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    }
+  ]
+}

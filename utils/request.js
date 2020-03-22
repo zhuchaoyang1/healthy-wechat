@@ -1,10 +1,12 @@
+const util = require('./util.js');
 // 请求封装
 function sendHttp(method, url, data, header = {
   "Content-Type": "application/json"
 }) {
+  // util.loading.showLoading('加载中');
   return new Promise((resolve, reject) => {
     wx.request({
-      url: `http://localhost:8080/${url}`,
+      url: `http://localhost:8080${url}`,
       method: method,
       data: data,
       header: header,
@@ -24,6 +26,9 @@ function sendHttp(method, url, data, header = {
           duration: 2000
         })
         reject(err);
+      },
+      complete: res=> {
+        // wx.hideLoading();
       }
     });
   });

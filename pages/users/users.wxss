@@ -1,0 +1,59 @@
+/* pages/register/register.wxss */
+
+page {
+  background: #fff;
+  font-size: 28rpx;
+  color: #333;
+  font-family: Helvetica Neue, Helvetica, sans-serif;
+}
+
+.text-des {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40vh;
+  align-items: center;
+}
+
+.welcomes {
+  font-size: 16px;
+}
+
+button {
+  margin-top: 18px;
+}
+
+.bord {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+}
+
+.my-text {
+  position: relative;
+  font-size: 30px;
+  animation: myfirst 5s linear infinite;
+  margin-top: 60px;
+  top: -30px;
+  left: -20px
+}
+
+@keyframes myfirst {
+  from {
+    left: -20px;
+  }
+
+  25% {
+    left: 30px;
+    top: -50px;
+  }
+
+  50% {
+    left: 50px;
+    top: -40px;
+  }
+
+  to {
+    left: -20px;
+    top: -30px;
+  }
+}

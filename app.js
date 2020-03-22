@@ -1,22 +1,15 @@
 //app.js
-var request = require('/utils/request.js')
 App({
   onLaunch: function() {
     console.log('>>> Wechat onlaunch');
-    wx.login({
-      success: res => {
-        request.sendHttp('POST', '/user/login', {
-          code: res.code
-        }).then(res => {
-          console.log(res.data.result.users.length);
-        }).catch(err => {
-          console.log(err);
-        });
-      },
-      fail: function(res) {},
-      complete: function(res) {},
-    })
-
+    wx.getSystemInfo({
+      success: e => {
+        this.globalData.StatusBar = e.statusBarHeight;
+        let custom = wx.getMenuButtonBoundingClientRect();
+        this.globalData.Custom = custom;
+        this.globalData.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
+      }
+    });
   },
   globalData: {
     userInfo: null

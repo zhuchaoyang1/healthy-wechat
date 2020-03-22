@@ -14,6 +14,43 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+// About Router API
+const redirect = url => {
+  wx.redirectTo({url})
+};
+const switchTab = url => {
+  wx.switchTab({url})
+}
+const reLaunch = url => {
+  wx.reLaunch({url})
+}
+const navigateTo = (url, event) => {
+  wx.navigateTo({url,event})
+}
+const navigateBack = delta => {
+  return delta < 1 ? null :
+    wx.navigateBack({delta})
+}
+
+
+//Loading
+const showLoading = title=>{
+  wx.showLoading({title})
+}
+
+
+
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  go: {
+    redirect,
+    switchTab,
+    reLaunch,
+    navigateTo,
+    navigateBack
+  },
+  loading: {
+    showLoading
+  }
 }

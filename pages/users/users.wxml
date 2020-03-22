@@ -1,0 +1,15 @@
+<view class='app-title'>惜已</view>
+
+<view class="container">
+    <i-spin fix></i-spin>
+</view>
+
+<view class='text-des'>
+  <view class='bord'>
+    <text class='iconfont icon-feiji my-text'></text>
+  </view>
+  <text class='welcomes'>欢迎来到惜已小程序！</text>
+  <button class='scopes cu-btn lines-black lg shadow' wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" disabled="{{btn_disable}}">
+    微信授权一键登录
+  </button>
+</view>

@@ -23,7 +23,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.4",
+	"libVersion": "2.10.3",
 	"appid": "wxfcb47ae4ad192245",
 	"projectname": "healthy",
 	"debugOptions": {
