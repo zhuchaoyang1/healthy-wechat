@@ -76,15 +76,16 @@ Page({
         request.sendHttp('POST', '/user/login', {
           code: res.code
         }).then(res => {
-          let users = res.data.result.users;
-          if (users.length === 0) {
+          let result = res.data.result;
+          if (!result.users) {
             // 需要注册操作
             this.setData({
-              openid: res.data.result.openid,
               btn_disable: false
             })
+            // 保存TOKEN
+            app.globalData.token = result.jwt;
           } else {
-            app.globalData.userInfo = users[0];
+            app.globalData.userInfo = users;
             util.go.redirect('/pages/index/index', null);
           }
         }).catch(err => {
@@ -108,11 +109,9 @@ Page({
   register(openid = this.data.openid) {
     util.loading.showLoading('加载中');
     let userInfo = this.data.userInfo;
-    userInfo.openId = openid;
     request.sendHttp('POST', '/user/reg', {
       ...userInfo
     }).then(res => {
-      console.log(res);
       if (res.data.code === 1) {
         this.setData({
           btn_disable: true

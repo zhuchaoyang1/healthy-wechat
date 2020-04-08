@@ -16,28 +16,51 @@ const formatNumber = n => {
 
 // About Router API
 const redirect = url => {
-  wx.redirectTo({url})
+  wx.redirectTo({
+    url
+  })
 };
 const switchTab = url => {
-  wx.switchTab({url})
+  wx.switchTab({
+    url
+  })
 }
 const reLaunch = url => {
-  wx.reLaunch({url})
+  wx.reLaunch({
+    url
+  })
 }
 const navigateTo = (url, event) => {
-  wx.navigateTo({url,event})
+  wx.navigateTo({
+    url,
+    event
+  })
 }
 const navigateBack = delta => {
   return delta < 1 ? null :
-    wx.navigateBack({delta})
+    wx.navigateBack({
+      delta
+    })
 }
 
 
 //Loading
-const showLoading = title=>{
-  wx.showLoading({title})
+const showLoading = title => {
+  wx.showLoading({
+    title
+  })
 }
-
+const showToast = (title, icon, duration=2000, mask=false, success = null,fail=null,complete=null) => {
+  wx.showToast({
+    title,
+    icon,
+    duration,
+    mask,
+    success,
+    fail,
+    complete
+  })
+}
 
 
 
@@ -52,5 +75,8 @@ module.exports = {
   },
   loading: {
     showLoading
+  },
+  toast: {
+    showToast
   }
 }
